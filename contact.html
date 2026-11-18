@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | GenZee Tech (Pvt) Ltd</title>
+  <meta name="description" content="Contact GenZee Tech (Pvt) Ltd in Colombo, Sri Lanka. WhatsApp hotline, email, address, and quotation form." />
+  <link rel="icon" type="image/png" href="Logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans">
+
+  <!-- Header -->
+  <header class="py-4 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-40 backdrop-blur">
+    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+      <a href="index.html" class="h-11 w-48 bg-white rounded-xl p-1 shadow-sm border border-slate-200 flex items-center justify-center">
+        <img src="Logo.png" alt="GenZee Tech Logo" class="max-h-full max-w-full object-contain" />
+      </a>
+      <a href="index.html" class="flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:underline">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Homepage
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-12 space-y-12">
+    <div class="text-center max-w-2xl mx-auto space-y-3">
+      <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-500/10 text-blue-600 uppercase">Get In Touch</span>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Start a Project or Consultation</h1>
+      <p class="text-slate-500 text-sm sm:text-base">We typically respond within 2 to 4 business hours.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <!-- Info Left -->
+      <div class="lg:col-span-5 bg-gradient-to-br from-blue-900 to-slate-950 text-white p-8 sm:p-10 rounded-3xl border border-blue-800/40 space-y-6 shadow-xl">
+        <h2 class="text-2xl font-bold">Contact Details</h2>
+        <div class="space-y-4 text-sm text-slate-300">
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-blue-400 shrink-0">
+              <i data-lucide="map-pin" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-xs font-bold uppercase text-slate-400">Headquarters</div>
+              <div class="text-white font-medium">Colombo, Sri Lanka</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-blue-400 shrink-0">
+              <i data-lucide="mail" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-xs font-bold uppercase text-slate-400">Email Address</div>
+              <a href="mailto:info@genzeetech.com" class="text-white hover:underline font-medium">info@genzeetech.com</a>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-emerald-400 shrink-0">
+              <i data-lucide="phone-call" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-xs font-bold uppercase text-slate-400">WhatsApp Hotline</div>
+              <a href="https://wa.me/94779669761?text=Hi%20GenZee%20Tech%2C%20I%27m%20interested%20in%20starting%20a%20new%20project." target="_blank" class="text-emerald-300 font-bold hover:underline">+94 779669761</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-white/10">
+          <a href="https://wa.me/94779669761?text=Hi%20GenZee%20Tech%2C%20I%27m%20interested%20in%20starting%20a%20new%20project." target="_blank" class="w-full py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold flex items-center justify-center gap-2 shadow-lg transition-all">
+            <i data-lucide="message-circle" class="w-5 h-5 fill-white"></i> Chat on WhatsApp Directly
+          </a>
+        </div>
+      </div>
+
+      <!-- Form Right -->
+      <div class="lg:col-span-7 bg-white dark:bg-slate-900 p-8 sm:p-10 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl">
+        <!-- Success Screen -->
+        <div id="contactPageSuccess" class="hidden text-center py-12 space-y-4">
+          <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-500 mx-auto flex items-center justify-center">
+            <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+          </div>
+          <h3 class="text-2xl font-extrabold text-slate-900 dark:text-white">Inquiry Submitted!</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 max-w-md mx-auto">
+            Thank you for reaching out to GenZee Tech! Our team will review your inquiry and follow up promptly. A direct WhatsApp message has also been initiated.
+          </p>
+          <button type="button" onclick="resetPageContactForm()" class="px-6 py-2.5 rounded-full text-xs font-bold bg-blue-600 text-white hover:bg-blue-700 transition-colors">
+            Send Another Inquiry
+          </button>
+        </div>
+
+        <form id="contactPageForm" onsubmit="handleContactPageSubmit(event)" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Your Name *</label>
+              <input type="text" id="cpName" required placeholder="John Doe" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm focus:ring-2 focus:ring-blue-500 outline-none" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Email Address *</label>
+              <input type="email" id="cpEmail" required placeholder="john@example.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm focus:ring-2 focus:ring-blue-500 outline-none" />
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Phone / WhatsApp *</label>
+              <input type="tel" id="cpPhone" required placeholder="+94 77 123 4567" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm focus:ring-2 focus:ring-blue-500 outline-none" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Service Required *</label>
+              <select id="cpService" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+                <option>Website Development (WordPress / React)</option>
+                <option>Full-Stack Development (Next.js / Cloud)</option>
+                <option>Mobile Applications (iOS & Android)</option>
+                <option>Branding & UI/UX Graphic Design</option>
+                <option>Cyber Security Solutions (Audit / Pen Test)</option>
+                <option>GenZee Tech Academy (Grade 1-11 IT Skills)</option>
+                <option>General Enquiry</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Message / Requirements *</label>
+            <textarea id="cpMessage" rows="4" required placeholder="Tell us about your project, timeline, or questions..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+          </div>
+          <button type="submit" class="w-full py-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold transition-all flex items-center justify-center gap-2 shadow-md">
+            <i data-lucide="send" class="w-4 h-4"></i> Submit Inquiry & Connect on WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div class="w-full h-80 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126743.58585973719!2d79.78616429302633!3d6.92192257621146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae253d10f7a7003%3A0x320b2e4d32d3838d!2sColombo%2C%20Sri%20Lanka!5e0!3m2!1sen!2slk!4v1700000000000!5m2!1sen!2slk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-8 text-center text-xs border-t border-slate-800 mt-16">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
+      <p>© 2026 GenZee Tech (Pvt) Ltd. All rights reserved.</p>
+      <div class="flex justify-center gap-4 text-slate-500">
+        <a href="index.html" class="hover:underline">Home</a>
+        <span>•</span>
+        <a href="services.html" class="hover:underline">Services</a>
+        <span>•</span>
+        <a href="academy.html" class="hover:underline">Academy</a>
+        <span>•</span>
+        <a href="privacy-policy.html" class="hover:underline">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    function handleContactPageSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('cpName').value.trim();
+      const email = document.getElementById('cpEmail').value.trim();
+      const phone = document.getElementById('cpPhone').value.trim();
+      const service = document.getElementById('cpService').value;
+      const message = document.getElementById('cpMessage').value.trim();
+
+      if (!name || !email || !message) return;
+
+      if (typeof confetti === 'function') {
+        confetti({ particleCount: 90, spread: 60, origin: { y: 0.6 } });
+      }
+
+      const waText = encodeURIComponent(
+        `*New Inquiry from GenZee Tech Website*\n\n` +
+        `👤 *Name:* ${name}\n` +
+        `✉️ *Email:* ${email}\n` +
+        `📞 *Phone:* ${phone}\n` +
+        `🛠️ *Service:* ${service}\n\n` +
+        `💬 *Message:*\n${message}`
+      );
+
+      window.open(`https://wa.me/94779669761?text=${waText}`, '_blank');
+
+      document.getElementById('contactPageForm').classList.add('hidden');
+      document.getElementById('contactPageSuccess').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function resetPageContactForm() {
+      document.getElementById('contactPageForm').reset();
+      document.getElementById('contactPageForm').classList.remove('hidden');
+      document.getElementById('contactPageSuccess').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>

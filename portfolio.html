@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio & Case Studies | GenZee Tech (Pvt) Ltd</title>
+  <meta name="description" content="Explore client case studies across web development, mobile apps, full-stack architectures, and cyber security audits." />
+  <link rel="icon" type="image/png" href="Logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans">
+
+  <!-- Header -->
+  <header class="py-4 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-40 backdrop-blur">
+    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+      <a href="index.html" class="h-11 w-48 bg-white rounded-xl p-1 shadow-sm border border-slate-200 flex items-center justify-center">
+        <img src="Logo.png" alt="GenZee Tech Logo" class="max-h-full max-w-full object-contain" />
+      </a>
+      <a href="index.html" class="flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:underline">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Homepage
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-12 space-y-10">
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-500/10 text-blue-600 uppercase">Proven Track Record</span>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Client Work & Case Studies</h1>
+      <p class="text-slate-500 text-sm sm:text-base leading-relaxed">Explore our curated projects across full-stack architectures, mobile apps, brand identities, and cybersecurity hardening worldwide.</p>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-wrap justify-center gap-2 pt-2" id="portfolio-tabs">
+        <button type="button" onclick="filterPortfolioPage('all')" class="p-tab px-4 py-2 rounded-full text-xs font-bold bg-blue-600 text-white shadow-sm transition-all" data-cat="all">
+          All (5)
+        </button>
+        <button type="button" onclick="filterPortfolioPage('Web')" class="p-tab px-4 py-2 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 transition-all" data-cat="Web">
+          Web Portals
+        </button>
+        <button type="button" onclick="filterPortfolioPage('Full-Stack')" class="p-tab px-4 py-2 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 transition-all" data-cat="Full-Stack">
+          Full-Stack SaaS
+        </button>
+        <button type="button" onclick="filterPortfolioPage('Mobile')" class="p-tab px-4 py-2 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 transition-all" data-cat="Mobile">
+          Mobile Apps
+        </button>
+        <button type="button" onclick="filterPortfolioPage('Cyber Security')" class="p-tab px-4 py-2 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 transition-all" data-cat="Cyber Security">
+          Cyber Security
+        </button>
+        <button type="button" onclick="filterPortfolioPage('Branding')" class="p-tab px-4 py-2 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 transition-all" data-cat="Branding">
+          Branding
+        </button>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- 1 -->
+      <div data-category="Full-Stack" class="p-card rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+        <div class="relative h-52 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Apex Logistics" class="w-full h-full object-cover" />
+          <div class="absolute top-3 left-3 flex items-center gap-2">
+            <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-slate-100 shadow-sm">🇸🇬 Singapore</span>
+            <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-blue-600 text-white shadow-sm">Full-Stack</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="text-xs text-slate-400 mb-1">Apex Freight Corp · 2026</div>
+            <h3 class="font-bold text-lg leading-snug">Apex Global Logistics Platform</h3>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">Real-time container tracking, automated freight rate calculation, and client dashboard.</p>
+            <div class="flex flex-wrap gap-1.5 mt-4">
+              <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">Next.js</span>
+              <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">Node.js</span>
+              <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">Supabase</span>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+            <a href="https://example.com" target="_blank" class="text-xs font-bold text-blue-600 hover:underline flex items-center gap-1">Visit Website <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div data-category="Web" class="p-card rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+        <div class="relative h-52 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="LankaCare Telehealth" class="w-full h-full object-cover" />
+          <div class="absolute top-3 left-3 flex items-center gap-2">
+            <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-slate-100 shadow-sm">🇱🇰 Sri Lanka</span>
+            <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-blue-600 text-white shadow-sm">Web</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="text-xs text-slate-400 mb-1">LankaCare Clinic · 2025</div>
+            <h3 class="font-bold text-lg leading-snug">LankaCare Telehealth Portal</h3>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">Patient appointment scheduling, doctor video consultations, and digital prescription issuance.</p>
+            <div class="flex flex-wrap gap-1.5 mt-4">
+              <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">React</span>
+              <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">WordPress</span>
+              <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">Tailwind</span>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+            <a href="https://example.com" target="_blank" class="text-xs font-bold text-blue-600 hover:underline flex items-center gap-1">Visit Website <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div data-category="Cyber Security" class="p-card rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+        <div class="relative h-52 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="SecureVault Cyber Hardening" class="w-full h-full object-cover" />
+          <div class="absolute top-3 left-3 flex items-center gap-2">
+            <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-slate-100 shadow-sm">🇬🇧 UK</span>
+            <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-500 text-slate-950 shadow-sm">Cyber Security</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="text-xs text-slate-400 mb-1">VaultPay Ltd · 2026</div>
+            <h3 class="font-bold text-lg leading-snug">SecureVault Cyber Hardening</h3>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">Zero-trust penetration testing, cloud server hardening, and automated intrusion monitoring.</p>
+            <div class="flex flex-wrap gap-1.5 mt-4">
+              <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">Pen Testing</span>
+              <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">OWASP</span>
+              <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">ISO 27001</span>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+            <a href="cyber-security.html" class="text-xs font-bold text-emerald-600 hover:underline flex items-center gap-1">View Case Study <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div data-category="Mobile" class="p-card rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+        <div class="relative h-52 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+          <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" alt="FitPulse Workout App" class="w-full h-full object-cover" />
+          <div class="absolute top-3 left-3 flex items-center gap-2">
+            <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-slate-100 shadow-sm">🇦🇺 Australia</span>
+            <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-sky-500 text-white shadow-sm">Mobile</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="text-xs text-slate-400 mb-1">FitPulse Fitness · 2025</div>
+            <h3 class="font-bold text-lg leading-snug">FitPulse Workout & Nutrition App</h3>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">Cross-platform iOS and Android mobile app with live tracker, wearable sync, and customized diet plans.</p>
+            <div class="flex flex-wrap gap-1.5 mt-4">
+              <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">React Native</span>
+              <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">Firebase</span>
+              <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">HealthKit</span>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+            <a href="https://example.com" target="_blank" class="text-xs font-bold text-blue-600 hover:underline flex items-center gap-1">Visit Website <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div data-category="Branding" class="p-card rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+        <div class="relative h-52 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+          <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=800&q=80" alt="Aurora Identity System" class="w-full h-full object-cover" />
+          <div class="absolute top-3 left-3 flex items-center gap-2">
+            <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-slate-100 shadow-sm">🇦🇪 UAE</span>
+            <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-purple-500 text-white shadow-sm">Branding</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="text-xs text-slate-400 mb-1">Aurora Lifestyle · 2026</div>
+            <h3 class="font-bold text-lg leading-snug">Aurora Eco-Living Identity System</h3>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">Complete visual identity rebrand, sustainable packaging guidelines, and custom e-commerce UI design.</p>
+            <div class="flex flex-wrap gap-1.5 mt-4">
+              <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">UI/UX</span>
+              <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">Figma</span>
+              <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">Packaging</span>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+            <a href="https://example.com" target="_blank" class="text-xs font-bold text-purple-600 hover:underline flex items-center gap-1">Visit Showcase <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-8 text-center text-xs border-t border-slate-800 mt-16">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
+      <p>© 2026 GenZee Tech (Pvt) Ltd. All rights reserved.</p>
+      <div class="flex justify-center gap-4 text-slate-500">
+        <a href="index.html" class="hover:underline">Home</a>
+        <span>•</span>
+        <a href="services.html" class="hover:underline">Services</a>
+        <span>•</span>
+        <a href="contact.html" class="hover:underline">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    function filterPortfolioPage(category) {
+      const tabs = document.querySelectorAll('.p-tab');
+      const cards = document.querySelectorAll('.p-card');
+
+      tabs.forEach(tab => {
+        if (tab.getAttribute('data-cat') === category) {
+          tab.classList.remove('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+          tab.classList.add('bg-blue-600', 'text-white', 'shadow-sm');
+        } else {
+          tab.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+          tab.classList.remove('bg-blue-600', 'text-white', 'shadow-sm');
+        }
+      });
+
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

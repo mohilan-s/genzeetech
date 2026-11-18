@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GenZee Tech (Pvt) Ltd | Modern Digital Solutions, Cyber Security & Academy</title>
+  <meta name="description" content="Colombo-based technology innovator delivering bespoke web development, full-stack systems, mobile apps, branding & UI/UX design, comprehensive cyber security solutions, and GenZee Tech Academy for school students." />
+  <link rel="icon" type="image/png" href="Logo.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff8ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#0062ff',
+              600: '#0052db',
+              700: '#0042b5',
+              800: '#003392',
+              900: '#012068',
+              cyan: '#00b4fd',
+              navy: '#010a29',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          borderRadius: {
+            '20': '20px',
+            '24': '24px',
+            '30': '30px',
+          },
+          animation: {
+            'marquee-infinite': 'marquee 25s linear infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Canvas Confetti for form submissions -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.4); border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.7); }
+    .text-gradient {
+      background: linear-gradient(135deg, #0062ff 0%, #00b4fd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+
+  <!-- Dark Mode Init Script (prevents flash) -->
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 antialiased font-sans selection:bg-brand-500 selection:text-white transition-colors duration-200">
+
+  <!-- ================= NAVBAR ================= -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200/60 dark:border-slate-800/60 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group focus:outline-none">
+          <div class="relative h-11 w-48 sm:h-12 sm:w-52 flex items-center justify-center bg-white rounded-xl px-2.5 py-1 shadow-sm border border-slate-200/60 transition-transform duration-200 group-hover:scale-[1.02]">
+            <img src="Logo.png" alt="GenZee Tech Logo" class="max-h-full max-w-full object-contain" />
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-1">
+          <a href="index.html" class="px-3 py-2 rounded-lg text-sm font-semibold text-brand-600 dark:text-brand-cyan transition-colors">
+            Home
+          </a>
+          <a href="about.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500 dark:hover:text-brand-cyan hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors">
+            About Us
+          </a>
+
+          <!-- Services Dropdown -->
+          <div class="relative group">
+            <button type="button" class="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500 dark:hover:text-brand-cyan transition-colors">
+              <span>Services</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute top-full left-0 mt-1 w-96 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div class="mb-2 px-3 py-1 flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-slate-400">
+                <span>Our Solutions</span>
+                <a href="services.html" class="text-brand-500 hover:underline capitalize font-medium text-xs flex items-center gap-1">
+                  All Services <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                </a>
+              </div>
+              <div class="space-y-1">
+                <a href="services.html#web-dev" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/70 transition-colors group/item">
+                  <div class="p-2 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-500"><i data-lucide="globe" class="w-4 h-4"></i></div>
+                  <div>
+                    <div class="text-sm font-semibold text-slate-900 dark:text-white group-hover/item:text-brand-500">Website Development</div>
+                    <div class="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">WordPress, React & custom platforms built for speed.</div>
+                  </div>
+                </a>
+                <a href="services.html#full-stack" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/70 transition-colors group/item">
+                  <div class="p-2 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 text-indigo-500"><i data-lucide="layers" class="w-4 h-4"></i></div>
+                  <div>
+                    <div class="text-sm font-semibold text-slate-900 dark:text-white group-hover/item:text-brand-500">Full-Stack Development</div>
+                    <div class="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">Next.js, Node.js & high-availability cloud backends.</div>
+                  </div>
+                </a>
+                <a href="services.html#mobile-apps" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/70 transition-colors group/item">
+                  <div class="p-2 rounded-lg bg-sky-50 dark:bg-sky-950/60 text-sky-500"><i data-lucide="smartphone" class="w-4 h-4"></i></div>
+                  <div>
+                    <div class="text-sm font-semibold text-slate-900 dark:text-white group-hover/item:text-brand-500">Mobile Applications</div>
+                    <div class="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">Native iOS & Android apps built with React Native.</div>
+                  </div>
+                </a>
+                <a href="services.html#branding" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/70 transition-colors group/item">
+                  <div class="p-2 rounded-lg bg-purple-50 dark:bg-purple-950/60 text-purple-500"><i data-lucide="palette" class="w-4 h-4"></i></div>
+                  <div>
+                    <div class="text-sm font-semibold text-slate-900 dark:text-white group-hover/item:text-brand-500">Branding & Graphic Design</div>
+                    <div class="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">UI/UX design systems, identity & visual collateral.</div>
+                  </div>
+                </a>
+                <a href="cyber-security.html" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/70 transition-colors group/item">
+                  <div class="p-2 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-500"><i data-lucide="shield-check" class="w-4 h-4"></i></div>
+                  <div>
+                    <div class="text-sm font-semibold text-emerald-600 dark:text-emerald-400">Cyber Security Solutions</div>
+                    <div class="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">Pen testing, vulnerability scans & 24/7 surveillance.</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Academy Highlighted -->
+          <a href="academy.html" class="relative flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-sm font-semibold border border-amber-400/60 text-amber-600 dark:text-amber-300 bg-amber-400/10 hover:bg-amber-400/20 transition-all">
+            <i data-lucide="sparkles" class="w-4 h-4 text-amber-500"></i>
+            <span>Academy</span>
+            <span class="text-[10px] font-bold px-1.5 py-0.2 rounded-md bg-amber-500 text-white">NEW</span>
+          </a>
+
+          <a href="portfolio.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500 dark:hover:text-brand-cyan transition-colors">
+            Portfolio
+          </a>
+          <a href="careers.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500 dark:hover:text-brand-cyan transition-colors">
+            Careers
+          </a>
+
+          <!-- More Dropdown -->
+          <div class="relative group">
+            <button type="button" class="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500 dark:hover:text-brand-cyan transition-colors">
+              <span>More</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute top-full right-0 mt-1 w-60 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <a href="blog.html" class="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500">
+                <i data-lucide="book-open" class="w-4 h-4 text-brand-500"></i>
+                <span>Blog & Insights</span>
+              </a>
+              <a href="faq.html" class="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500">
+                <i data-lucide="help-circle" class="w-4 h-4 text-purple-500"></i>
+                <span>Frequently Asked</span>
+              </a>
+              <a href="contact.html" class="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500">
+                <i data-lucide="mail" class="w-4 h-4 text-emerald-500"></i>
+                <span>Contact & Map</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Right Controls -->
+        <div class="hidden lg:flex items-center gap-3">
+          <!-- Theme Toggle Button -->
+          <button id="theme-toggle" type="button" aria-label="Toggle theme" class="inline-flex items-center justify-center w-9 h-9 rounded-full border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 text-slate-700 dark:text-slate-200 hover:border-brand-500 transition-colors">
+            <i id="theme-icon-sun" data-lucide="sun" class="w-4 h-4 text-amber-400 hidden dark:block"></i>
+            <i id="theme-icon-moon" data-lucide="moon" class="w-4 h-4 text-slate-700 block dark:hidden"></i>
+          </button>
+          <a href="#contact-section" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-brand-600 via-brand-500 to-brand-cyan hover:opacity-95 shadow-md hover:shadow-brand-500/25 transition-all duration-200 hover:scale-[1.03] active:scale-95">
+            Let's Talk!
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <div class="flex items-center gap-2 lg:hidden">
+          <button id="mobile-theme-toggle" type="button" aria-label="Toggle theme" class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-200">
+            <i data-lucide="moon" class="w-4 h-4 dark:hidden"></i>
+            <i data-lucide="sun" class="w-4 h-4 text-amber-400 hidden dark:block"></i>
+          </button>
+          <button id="mobile-menu-btn" type="button" class="p-2 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden px-6 pt-4 pb-6 space-y-3 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 shadow-xl max-h-[85vh] overflow-y-auto">
+      <a href="index.html" class="block text-base font-semibold py-2 text-brand-600 dark:text-brand-cyan border-b border-slate-100 dark:border-slate-800">Home</a>
+      <a href="about.html" class="block text-base font-medium py-2 text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800">About Us</a>
+      <a href="services.html" class="block text-base font-medium py-2 text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800">All Services</a>
+      <a href="cyber-security.html" class="block text-base font-medium py-2 text-emerald-600 dark:text-emerald-400 border-b border-slate-100 dark:border-slate-800">Cyber Security Solutions</a>
+      <a href="academy.html" class="flex items-center justify-between py-2.5 px-3 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 font-semibold">
+        <span>GenZee Tech Academy</span>
+        <span class="text-xs px-2 py-0.5 rounded-full bg-amber-500 text-white">Grade 1-11</span>
+      </a>
+      <a href="portfolio.html" class="block text-base font-medium py-2 text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800">Portfolio</a>
+      <a href="careers.html" class="block text-base font-medium py-2 text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800">Careers</a>
+      <a href="blog.html" class="block text-base font-medium py-2 text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800">Blog & Insights</a>
+      <a href="faq.html" class="block text-base font-medium py-2 text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800">FAQ</a>
+      <div class="pt-2">
+        <a href="#contact-section" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block w-full text-center py-3 rounded-xl text-white font-semibold bg-brand-600 shadow-md">Let's Talk!</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="pt-24 space-y-12 sm:space-y-16">
+
+    <!-- ================= 1. HERO SECTION ================= -->
+    <section class="px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="relative rounded-3xl bg-gradient-to-br from-slate-900 via-brand-900 to-slate-950 text-white p-8 sm:p-14 lg:p-20 overflow-hidden shadow-2xl border border-white/10">
+          <div class="absolute -top-32 -left-32 w-96 h-96 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-brand-cyan/20 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="relative z-10 max-w-3xl space-y-6">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold text-brand-cyan uppercase tracking-wider">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Colombo, Sri Lanka · Global Engineering Delivery</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1]">
+              We Build Extraordinary Digital
+              <span id="rotating-word" class="block text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-blue-300 transition-all duration-300">
+                Experiences
+              </span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
+              GenZee Tech (Pvt) Ltd is an agile software engineering, cybersecurity, and tech education powerhouse. We design blazing fast websites, scalable cloud platforms, mobile apps, and cultivate Sri Lanka's next generation of developers.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4 pt-4">
+              <a href="#contact-section" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-bold bg-white text-slate-950 hover:bg-slate-100 shadow-xl transition-all duration-200 hover:scale-105 active:scale-95">
+                <span>Start a Project</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 text-brand-600"></i>
+              </a>
+
+              <a href="academy.html" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-amber-500/20 text-amber-300 border border-amber-400/30 hover:bg-amber-500/30 transition-all duration-200">
+                <i data-lucide="graduation-cap" class="w-4 h-4 text-amber-400"></i>
+                <span>GenZee Academy (Gr. 1-11)</span>
+              </a>
+
+              <a href="https://wa.me/94779669761?text=Hi%20GenZee%20Tech%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-full text-sm font-semibold text-emerald-400 hover:text-emerald-300 hover:bg-white/5 transition-all">
+                <i data-lucide="message-circle" class="w-4 h-4 fill-emerald-400"></i>
+                <span>WhatsApp: +94 779669761</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 2. LIVE STATS COUNTER STRIP ================= -->
+    <section class="px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm stat-box" data-target="5" data-suffix="+">
+          <div class="text-3xl sm:text-4xl font-extrabold text-brand-600 dark:text-brand-cyan mb-1 flex items-baseline">
+            <span class="stat-number">0</span><span>+</span>
+          </div>
+          <div class="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-100">Global Client Markets</div>
+          <p class="text-xs text-slate-500 mt-1">Sri Lanka, UK, Australia, UAE, Singapore</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm stat-box" data-target="40" data-suffix="+">
+          <div class="text-3xl sm:text-4xl font-extrabold text-brand-600 dark:text-brand-cyan mb-1 flex items-baseline">
+            <span class="stat-number">0</span><span>+</span>
+          </div>
+          <div class="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-100">Projects Delivered</div>
+          <p class="text-xs text-slate-500 mt-1">Web, full-stack & mobile apps completed on time</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm stat-box" data-target="99" data-suffix=".4%">
+          <div class="text-3xl sm:text-4xl font-extrabold text-emerald-500 mb-1 flex items-baseline">
+            <span class="stat-number">0</span><span>.4%</span>
+          </div>
+          <div class="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-100">Security Audit Score</div>
+          <p class="text-xs text-slate-500 mt-1">Zero critical vulnerabilities across audits</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm stat-box" data-target="500" data-suffix="+">
+          <div class="text-3xl sm:text-4xl font-extrabold text-amber-500 mb-1 flex items-baseline">
+            <span class="stat-number">0</span><span>+</span>
+          </div>
+          <div class="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-100">Academy Learners</div>
+          <p class="text-xs text-slate-500 mt-1">Students trained in Scratch, Python & ICT</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. CLIENT LOGOS MARQUEE ================= -->
+    <section class="py-6 overflow-hidden border-y border-slate-200/60 dark:border-slate-800/60 bg-slate-50/50 dark:bg-slate-900/30">
+      <div class="max-w-7xl mx-auto px-4 mb-3 text-center">
+        <p class="text-xs font-semibold uppercase tracking-widest text-slate-400">Trusted by Innovative Companies & Organizations Worldwide</p>
+      </div>
+      <div class="relative w-full overflow-hidden flex whitespace-nowrap">
+        <div class="flex items-center gap-12 sm:gap-16 animate-marquee-infinite text-slate-400 font-bold text-base sm:text-lg">
+          <span class="flex items-center gap-2"><i data-lucide="shield" class="w-5 h-5 text-emerald-500"></i> VaultPay UK</span>
+          <span class="flex items-center gap-2"><i data-lucide="plane" class="w-5 h-5 text-blue-500"></i> Ceylon Horizon Travels</span>
+          <span class="flex items-center gap-2"><i data-lucide="anchor" class="w-5 h-5 text-indigo-500"></i> Apex Freight Singapore</span>
+          <span class="flex items-center gap-2"><i data-lucide="activity" class="w-5 h-5 text-rose-500"></i> LankaCare Clinic</span>
+          <span class="flex items-center gap-2"><i data-lucide="feather" class="w-5 h-5 text-purple-500"></i> Aurora Living UAE</span>
+          <span class="flex items-center gap-2"><i data-lucide="zap" class="w-5 h-5 text-amber-500"></i> FitPulse Fitness Sydney</span>
+          <!-- Duplicate for seamless infinite loop -->
+          <span class="flex items-center gap-2"><i data-lucide="shield" class="w-5 h-5 text-emerald-500"></i> VaultPay UK</span>
+          <span class="flex items-center gap-2"><i data-lucide="plane" class="w-5 h-5 text-blue-500"></i> Ceylon Horizon Travels</span>
+          <span class="flex items-center gap-2"><i data-lucide="anchor" class="w-5 h-5 text-indigo-500"></i> Apex Freight Singapore</span>
+          <span class="flex items-center gap-2"><i data-lucide="activity" class="w-5 h-5 text-rose-500"></i> LankaCare Clinic</span>
+          <span class="flex items-center gap-2"><i data-lucide="feather" class="w-5 h-5 text-purple-500"></i> Aurora Living UAE</span>
+          <span class="flex items-center gap-2"><i data-lucide="zap" class="w-5 h-5 text-amber-500"></i> FitPulse Fitness Sydney</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4. OUR SERVICES ================= -->
+    <section id="services" class="px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-cyan text-xs font-semibold uppercase tracking-wider mb-2">
+            End-to-End Capabilities
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            Comprehensive Digital Engineering
+          </h2>
+          <p class="text-slate-500 text-sm sm:text-base mt-3">From bespoke corporate websites and cloud backends to offensive security and digital brand strategy.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div class="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <i data-lucide="globe" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-brand-500 transition-colors">Website Development</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Conversion-driven, blazing fast websites tailored for modern brands using WordPress, Elementor Pro, React, and Tailwind CSS with 100/100 Core Web Vitals.</p>
+              <ul class="text-xs text-slate-500 space-y-1.5 pt-2">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-500"></i> Corporate websites & blogs</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-500"></i> WooCommerce & E-Commerce</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-500"></i> Technical SEO architecture</li>
+              </ul>
+            </div>
+            <div class="pt-6 border-t border-slate-100 dark:border-slate-800 mt-6">
+              <a href="services.html#web-dev" class="text-xs font-bold text-brand-600 dark:text-brand-cyan hover:underline flex items-center gap-1">Learn more <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <i data-lucide="layers" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-brand-500 transition-colors">Full-Stack Development</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Scalable SaaS applications, custom customer portals, and microservices engineered using Next.js App Router, Node.js, Supabase, PostgreSQL, and AWS serverless architectures.</p>
+              <ul class="text-xs text-slate-500 space-y-1.5 pt-2">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-500"></i> Next.js 14 & Server Components</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-500"></i> RESTful & GraphQL APIs</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-500"></i> Role-based authentication & RBAC</li>
+              </ul>
+            </div>
+            <div class="pt-6 border-t border-slate-100 dark:border-slate-800 mt-6">
+              <a href="services.html#full-stack" class="text-xs font-bold text-brand-600 dark:text-brand-cyan hover:underline flex items-center gap-1">Learn more <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-2xl bg-sky-500/10 text-sky-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <i data-lucide="smartphone" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-brand-500 transition-colors">Mobile Applications</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Cross-platform iOS and Android mobile applications built with React Native. Offline-first synchronization, push notifications, and App Store / Google Play publishing.</p>
+              <ul class="text-xs text-slate-500 space-y-1.5 pt-2">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-500"></i> iOS & Android from single codebase</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-500"></i> Biometric FaceID / TouchID auth</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-500"></i> Real-time push & geolocation</li>
+              </ul>
+            </div>
+            <div class="pt-6 border-t border-slate-100 dark:border-slate-800 mt-6">
+              <a href="services.html#mobile-apps" class="text-xs font-bold text-brand-600 dark:text-brand-cyan hover:underline flex items-center gap-1">Learn more <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <i data-lucide="palette" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-brand-500 transition-colors">Branding & UI/UX Graphic Design</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Visual brand identity design, logo kits, typography tokens, and interactive Figma prototypes. Marketing creatives, social kits, and print graphics.</p>
+              <ul class="text-xs text-slate-500 space-y-1.5 pt-2">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-500"></i> Logo design & vector brand identity</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-500"></i> Interactive Figma design systems</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-500"></i> Social media kits & marketing banners</li>
+              </ul>
+            </div>
+            <div class="pt-6 border-t border-slate-100 dark:border-slate-800 mt-6">
+              <a href="services.html#branding" class="text-xs font-bold text-brand-600 dark:text-brand-cyan hover:underline flex items-center gap-1">Learn more <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+            </div>
+          </div>
+
+          <!-- Service 5 (Cyber Security) -->
+          <div class="p-8 rounded-3xl bg-slate-950 text-white border border-emerald-500/40 shadow-xl flex flex-col justify-between group relative overflow-hidden">
+            <div class="space-y-4 relative z-10">
+              <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <i data-lucide="shield-alert" class="w-6 h-6"></i>
+              </div>
+              <div class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500 text-slate-950 uppercase">Specialized Practice</div>
+              <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">Cyber Security Solutions</h3>
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">Penetration testing, vulnerability assessments, website hardening, zero-trust cloud configuration, and active incident response.</p>
+              <ul class="text-xs text-slate-400 space-y-1.5 pt-2">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> OWASP Top 10 web pen testing</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Cloud server & firewall hardening</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> ISO 27001 readiness reviews</li>
+              </ul>
+            </div>
+            <div class="pt-6 border-t border-slate-800 mt-6 relative z-10">
+              <a href="cyber-security.html" class="text-xs font-bold text-emerald-400 hover:underline flex items-center gap-1">View Security Packages <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+            </div>
+          </div>
+
+          <!-- Service 6 (Academy) -->
+          <div class="p-8 rounded-3xl bg-gradient-to-br from-amber-500/10 via-amber-500/5 to-white dark:to-slate-900 border border-amber-500/30 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+              </div>
+              <div class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-500 text-white uppercase">Grade 1 - 11 Students</div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-amber-500 transition-colors">GenZee Tech Academy</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Early coding, digital literacy, and school O/L ICT curriculum mastery. Structured streams from MIT Scratch to Python programming.</p>
+              <ul class="text-xs text-slate-500 space-y-1.5 pt-2">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-500"></i> Junior Explorers (Grade 1-5)</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-500"></i> Digital Creators (Grade 6-8)</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-500"></i> Future Innovators & O/L ICT (Gr. 9-11)</li>
+              </ul>
+            </div>
+            <div class="pt-6 border-t border-slate-100 dark:border-slate-800 mt-6">
+              <a href="academy-courses.html" class="text-xs font-bold text-amber-600 hover:underline flex items-center gap-1">Explore Syllabus <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 5. CYBER SECURITY HIGHLIGHT BAND ================= -->
+    <section class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-slate-950 text-white relative overflow-hidden">
+      <div class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
+            <i data-lucide="shield" class="w-3.5 h-3.5"></i>
+            <span>Offensive & Defensive Security</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+            Bulletproof Cyber Defense For Modern Organizations
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+            Protect your customer data, financial records, and cloud infrastructure against ransomware, SQL injections, and zero-day exploits before malicious hackers strike.
+          </p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
+            <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <div class="text-2xl font-bold text-emerald-400 mb-1">24/7</div>
+              <div class="text-xs text-slate-400">Intrusion Alerting</div>
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <div class="text-2xl font-bold text-emerald-400 mb-1">OWASP</div>
+              <div class="text-xs text-slate-400">Top 10 Compliant</div>
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <div class="text-2xl font-bold text-emerald-400 mb-1">0%</div>
+              <div class="text-xs text-slate-400">Breach Rate</div>
+            </div>
+          </div>
+          <div class="pt-4 flex flex-wrap gap-4">
+            <a href="cyber-security.html" class="px-6 py-3 rounded-full text-xs sm:text-sm font-bold bg-emerald-500 text-slate-950 hover:bg-emerald-400 transition-all flex items-center gap-2">
+              <span>Book Security Audit</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <a href="https://wa.me/94779669761?text=Urgent%20Cyber%20Security%20Inquiry%20from%20Website" target="_blank" class="px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-slate-300 border border-slate-700 hover:bg-slate-900 transition-all flex items-center gap-2">
+              <i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i> <span>Emergency Incident Call</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-xs text-slate-400 font-mono">
+            <span>TERMINAL: SOC_MONITOR_v2</span>
+            <span class="text-emerald-400 flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> ACTIVE</span>
+          </div>
+          <div class="space-y-3 font-mono text-xs text-slate-300">
+            <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800 flex items-center justify-between">
+              <span class="text-slate-400">[PORT_SCAN] 443 / 80 / 22</span>
+              <span class="text-emerald-400 font-bold">SECURED</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800 flex items-center justify-between">
+              <span class="text-slate-400">[SSL_ENCRYPTION] TLS 1.3</span>
+              <span class="text-emerald-400 font-bold">A+ GRADE</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800 flex items-center justify-between">
+              <span class="text-slate-400">[FIREWALL_STATE] WAF Active</span>
+              <span class="text-emerald-400 font-bold">BLOCKING THREATS</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800 flex items-center justify-between">
+              <span class="text-slate-400">[DDOS_MITIGATION] 100 Gbps</span>
+              <span class="text-emerald-400 font-bold">PROTECTED</span>
+            </div>
+          </div>
+          <p class="text-[11px] text-slate-400 leading-relaxed pt-2">
+            Non-destructive ethical pen tests and remediation blueprints tailored for e-commerce, fintech, healthcare, and educational portals.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 6. ACADEMY HIGHLIGHT BAND ================= -->
+    <section class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-amber-50/60 via-white to-slate-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-wider">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            <span>Nurturing Future Technologists</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            GenZee Tech Academy
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
+            Practical IT and coding courses designed specifically for school students from Grade 1 to Grade 11. Hands-on learning with patient mentorship.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Tier 1 -->
+          <div class="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-50 dark:bg-amber-950/40 text-amber-600">Grade 1 - 5</span>
+                <span class="text-xs text-slate-400 font-medium">Ages 6 - 10</span>
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Junior Explorers</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                Computer basics, touch typing, drawing, sequence logic puzzles, and playful block coding with MIT Scratch Junior.
+              </p>
+            </div>
+            <div class="pt-6 border-t border-slate-100 dark:border-slate-800 mt-6">
+              <a href="academy-courses.html" class="text-xs font-bold text-amber-600 hover:underline flex items-center gap-1">View Full Syllabus <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+            </div>
+          </div>
+
+          <!-- Tier 2 -->
+          <div class="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-50 dark:bg-amber-950/40 text-amber-600">Grade 6 - 8</span>
+                <span class="text-xs text-slate-400 font-medium">Ages 11 - 13</span>
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Digital Creators</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                Word, Excel, PowerPoint mastery, internet research, Canva graphic design, and typing their first real Python programs.
+              </p>
+            </div>
+            <div class="pt-6 border-t border-slate-100 dark:border-slate-800 mt-6">
+              <a href="academy-courses.html" class="text-xs font-bold text-amber-600 hover:underline flex items-center gap-1">View Full Syllabus <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+            </div>
+          </div>
+
+          <!-- Tier 3 -->
+          <div class="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-50 dark:bg-amber-950/40 text-amber-600">Grade 9 - 11</span>
+                <span class="text-xs text-slate-400 font-medium">Ages 14 - 17</span>
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Future Innovators</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                Advanced Python, full HTML5/CSS3 web design, Sri Lanka school O/L ICT curriculum exam prep, and cyber hygiene.
+              </p>
+            </div>
+            <div class="pt-6 border-t border-slate-100 dark:border-slate-800 mt-6">
+              <a href="academy-courses.html" class="text-xs font-bold text-amber-600 hover:underline flex items-center gap-1">View Full Syllabus <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center pt-10">
+          <a href="academy-enroll.html" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold bg-amber-500 hover:bg-amber-600 text-white shadow-md transition-all">
+            <span>Register a Student for Academy</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 7. HOW WE WORK ================= -->
+    <section class="px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-900/40 py-16">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-cyan text-xs font-semibold uppercase tracking-wider mb-2">
+            Our Proven Methodology
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            How We Deliver Success
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3">
+            <div class="text-xs font-mono font-bold text-brand-500">PHASE 01</div>
+            <h3 class="text-lg font-bold">Discovery & Strategy</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">Deep-dive technical scoping, user persona mapping, and architectural blueprinting.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3">
+            <div class="text-xs font-mono font-bold text-indigo-500">PHASE 02</div>
+            <h3 class="text-lg font-bold">UI/UX & Prototyping</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">High-fidelity Figma mockups, interactive component tokens, and client approval loops.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3">
+            <div class="text-xs font-mono font-bold text-sky-500">PHASE 03</div>
+            <h3 class="text-lg font-bold">Sprint Development</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">Agile bi-weekly sprints in Next.js, React Native, and Supabase with live previews.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3">
+            <div class="text-xs font-mono font-bold text-emerald-500">PHASE 04</div>
+            <h3 class="text-lg font-bold">Hardening & Launch</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">Full security audits, pen testing, edge CDN deployment, and 24/7 SLA monitoring.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 8. PORTFOLIO SHOWCASE WITH INTERACTIVE FILTER ================= -->
+    <section id="portfolio-section" class="px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+          <div>
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-cyan text-xs font-semibold uppercase tracking-wider mb-2">
+              Featured Work
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+              Selected Global Projects
+            </h2>
+          </div>
+          <a href="portfolio.html" class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 dark:text-brand-cyan hover:underline">
+            <span>View all projects in portfolio →</span>
+          </a>
+        </div>
+
+        <!-- Portfolio Category Filter Tabs -->
+        <div class="flex flex-wrap gap-2 mb-10" id="portfolio-filters">
+          <button type="button" onclick="filterPortfolio('all')" class="portfolio-tab px-4 py-2 rounded-full text-xs font-bold bg-brand-500 text-white shadow-sm transition-all" data-cat="all">
+            All Projects (5)
+          </button>
+          <button type="button" onclick="filterPortfolio('Web')" class="portfolio-tab px-4 py-2 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 transition-all" data-cat="Web">
+            Web Portals
+          </button>
+          <button type="button" onclick="filterPortfolio('Full-Stack')" class="portfolio-tab px-4 py-2 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 transition-all" data-cat="Full-Stack">
+            Full-Stack SaaS
+          </button>
+          <button type="button" onclick="filterPortfolio('Mobile')" class="portfolio-tab px-4 py-2 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 transition-all" data-cat="Mobile">
+            Mobile Apps
+          </button>
+          <button type="button" onclick="filterPortfolio('Cyber Security')" class="portfolio-tab px-4 py-2 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 transition-all" data-cat="Cyber Security">
+            Cyber Security
+          </button>
+          <button type="button" onclick="filterPortfolio('Branding')" class="portfolio-tab px-4 py-2 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 transition-all" data-cat="Branding">
+            Branding
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="portfolio-grid">
+          <!-- Project 1 -->
+          <div data-category="Full-Stack" class="portfolio-item rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+            <div class="relative h-56 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Apex Logistics" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute top-3 left-3 flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-slate-100 shadow-sm">🇸🇬 Singapore</span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-brand-500 text-white shadow-sm">Full-Stack</span>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col justify-between flex-1">
+              <div>
+                <div class="text-xs text-slate-400 mb-1">Apex Freight Corp · 2026</div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-brand-500 transition-colors mb-2">Apex Global Logistics Platform</h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Real-time container tracking, automated freight rate calculation, and client dashboard.</p>
+                <div class="flex flex-wrap gap-1.5 mb-6">
+                  <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Next.js</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Node.js</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Supabase</span>
+                </div>
+              </div>
+              <div class="pt-3 border-t border-slate-100 dark:border-slate-800">
+                <a href="https://example.com" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 dark:text-brand-cyan hover:underline">
+                  <span>Visit Website</span> <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div data-category="Web" class="portfolio-item rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+            <div class="relative h-56 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="LankaCare Telehealth" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute top-3 left-3 flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-slate-100 shadow-sm">🇱🇰 Sri Lanka</span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-brand-500 text-white shadow-sm">Web</span>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col justify-between flex-1">
+              <div>
+                <div class="text-xs text-slate-400 mb-1">LankaCare Clinic · 2025</div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-brand-500 transition-colors mb-2">LankaCare Telehealth Portal</h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Patient appointment scheduling, doctor video consultations, and digital prescription issuance.</p>
+                <div class="flex flex-wrap gap-1.5 mb-6">
+                  <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">React</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">WordPress</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Tailwind</span>
+                </div>
+              </div>
+              <div class="pt-3 border-t border-slate-100 dark:border-slate-800">
+                <a href="https://example.com" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 dark:text-brand-cyan hover:underline">
+                  <span>Visit Website</span> <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div data-category="Cyber Security" class="portfolio-item rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+            <div class="relative h-56 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+              <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="SecureVault Cyber Hardening" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute top-3 left-3 flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-slate-100 shadow-sm">🇬🇧 UK</span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500 text-white shadow-sm">Cyber Security</span>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col justify-between flex-1">
+              <div>
+                <div class="text-xs text-slate-400 mb-1">VaultPay Ltd · 2026</div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors mb-2">SecureVault Cyber Hardening</h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Zero-trust penetration testing, cloud server hardening, and automated intrusion monitoring.</p>
+                <div class="flex flex-wrap gap-1.5 mb-6">
+                  <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Pen Testing</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">OWASP</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">ISO 27001</span>
+                </div>
+              </div>
+              <div class="pt-3 border-t border-slate-100 dark:border-slate-800">
+                <a href="cyber-security.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-600 hover:underline">
+                  <span>View Security Case</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div data-category="Mobile" class="portfolio-item rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+            <div class="relative h-56 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+              <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" alt="FitPulse Workout App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute top-3 left-3 flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-slate-100 shadow-sm">🇦🇺 Australia</span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-sky-500 text-white shadow-sm">Mobile</span>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col justify-between flex-1">
+              <div>
+                <div class="text-xs text-slate-400 mb-1">FitPulse Fitness · 2025</div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-brand-500 transition-colors mb-2">FitPulse Workout & Nutrition App</h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Cross-platform iOS and Android mobile app with live tracker, wearable sync, and customized diet plans.</p>
+                <div class="flex flex-wrap gap-1.5 mb-6">
+                  <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">React Native</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Firebase</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">HealthKit</span>
+                </div>
+              </div>
+              <div class="pt-3 border-t border-slate-100 dark:border-slate-800">
+                <a href="https://example.com" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 dark:text-brand-cyan hover:underline">
+                  <span>Visit Website</span> <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div data-category="Branding" class="portfolio-item rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+            <div class="relative h-56 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+              <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=800&q=80" alt="Aurora Eco-Living" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute top-3 left-3 flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-slate-100 shadow-sm">🇦🇪 UAE</span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-purple-500 text-white shadow-sm">Branding</span>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col justify-between flex-1">
+              <div>
+                <div class="text-xs text-slate-400 mb-1">Aurora Lifestyle · 2026</div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-purple-500 transition-colors mb-2">Aurora Eco-Living Identity System</h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Complete visual identity rebrand, sustainable packaging guidelines, and custom e-commerce UI design.</p>
+                <div class="flex flex-wrap gap-1.5 mb-6">
+                  <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">UI/UX</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Figma</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Packaging</span>
+                </div>
+              </div>
+              <div class="pt-3 border-t border-slate-100 dark:border-slate-800">
+                <a href="https://example.com" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-purple-600 hover:underline">
+                  <span>Visit Showcase</span> <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 9. TOOLS & TECHNOLOGIES MARQUEE ================= -->
+    <section class="py-10 border-y border-slate-200/60 dark:border-slate-800/60 bg-white dark:bg-slate-950 overflow-hidden">
+      <div class="max-w-7xl mx-auto text-center mb-6">
+        <h3 class="text-xs font-semibold uppercase tracking-widest text-slate-400">Technologies & Platforms We Master</h3>
+      </div>
+      <div class="relative w-full overflow-hidden flex whitespace-nowrap">
+        <div class="flex items-center gap-8 animate-marquee-infinite">
+          <span class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-xs flex items-center gap-2">⚡ Next.js App Router</span>
+          <span class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-xs flex items-center gap-2">⚛️ React & React Native</span>
+          <span class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-xs flex items-center gap-2">📘 TypeScript</span>
+          <span class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-xs flex items-center gap-2">🟢 Node.js</span>
+          <span class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-xs flex items-center gap-2">⚡ Supabase & PostgreSQL</span>
+          <span class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-xs flex items-center gap-2">🌐 WordPress & Elementor</span>
+          <span class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-xs flex items-center gap-2">🎨 Figma & Adobe CC</span>
+          <span class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-xs flex items-center gap-2">🛡️ Burp Suite & OWASP</span>
+          <!-- Duplicate for seamless scroll -->
+          <span class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-xs flex items-center gap-2">⚡ Next.js App Router</span>
+          <span class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-xs flex items-center gap-2">⚛️ React & React Native</span>
+          <span class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-xs flex items-center gap-2">📘 TypeScript</span>
+          <span class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-xs flex items-center gap-2">🟢 Node.js</span>
+          <span class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-xs flex items-center gap-2">⚡ Supabase & PostgreSQL</span>
+          <span class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-xs flex items-center gap-2">🌐 WordPress & Elementor</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 10. WHY CHOOSE GENZEE TECH ================= -->
+    <section class="px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-cyan text-xs font-semibold uppercase tracking-wider mb-2">
+            The GenZee Advantage
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            Why Forward-Thinking Leaders Choose Us
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="p-7 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center"><i data-lucide="zap" class="w-5 h-5"></i></div>
+            <h3 class="text-lg font-bold">Blazing Performance</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">Sub-second page loads, edge rendering, and optimized Core Web Vitals that boost Google rankings.</p>
+          </div>
+
+          <div class="p-7 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center"><i data-lucide="shield-check" class="w-5 h-5"></i></div>
+            <h3 class="text-lg font-bold">Security Baked-In</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">Offensive security mindset. Every system undergoes rigorous vulnerability checks before production.</p>
+          </div>
+
+          <div class="p-7 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-600 flex items-center justify-center"><i data-lucide="award" class="w-5 h-5"></i></div>
+            <h3 class="text-lg font-bold">Transparent Pricing</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">No surprise invoices. Milestone-based deliverables with crystal-clear SOW contracts and source code ownership.</p>
+          </div>
+
+          <div class="p-7 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center"><i data-lucide="users" class="w-5 h-5"></i></div>
+            <h3 class="text-lg font-bold">Senior Engineer Direct Access</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">Work directly with engineering leads and founder Mohilan, not inexperienced intermediaries.</p>
+          </div>
+
+          <div class="p-7 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-600 flex items-center justify-center"><i data-lucide="clock" class="w-5 h-5"></i></div>
+            <h3 class="text-lg font-bold">Rapid Turnaround</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">Websites in 2-4 weeks; full-stack MVPs in 6-8 weeks. Rapid iterative delivery cycles.</p>
+          </div>
+
+          <div class="p-7 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-600 flex items-center justify-center"><i data-lucide="heart" class="w-5 h-5"></i></div>
+            <h3 class="text-lg font-bold">Educational Mission</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">Portion of company profits fuels underprivileged student STEM education via GenZee Academy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 11. FOUNDER SECTION ================= -->
+    <section id="founder" class="px-4 sm:px-6 lg:px-8 bg-slate-50/70 dark:bg-slate-900/30">
+      <div class="max-w-7xl mx-auto">
+        <div class="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 sm:p-12 lg:p-16 shadow-xl relative overflow-hidden">
+          <div class="absolute -top-16 -right-16 w-80 h-80 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            <!-- Left: Founder Photo (1200 x 1320 px) -->
+            <div class="lg:col-span-5 flex justify-center">
+              <div class="relative aspect-[10/11] w-full max-w-[340px] sm:max-w-[390px]">
+                <div class="absolute -inset-3 rounded-3xl bg-gradient-to-tr from-brand-600 via-brand-cyan to-amber-400 opacity-30 blur-lg transform -rotate-3"></div>
+                <div class="relative w-full h-full rounded-2xl overflow-hidden border-2 border-white dark:border-slate-800 shadow-2xl bg-slate-100 dark:bg-slate-800">
+                  <img src="Mohilan.jpg" alt="S. Mohilan, Founder & CEO of GenZee Tech" class="w-full h-full object-cover object-top" />
+                </div>
+                <div class="absolute -bottom-4 right-2 sm:-right-4 px-3.5 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-lg flex items-center gap-2">
+                  <i data-lucide="award" class="w-4 h-4 text-brand-500"></i>
+                  <span class="text-xs font-bold text-slate-800 dark:text-slate-100">Leader & Technologist</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Bio & Quote -->
+            <div class="lg:col-span-7 space-y-6">
+              <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-cyan text-xs font-semibold uppercase tracking-wider">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-500"></i>
+                <span>Founder's Vision</span>
+              </div>
+
+              <div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">S. Mohilan</h2>
+                <p class="text-base font-semibold text-brand-600 dark:text-brand-cyan mt-1">Founder & CEO · GenZee Tech (Pvt) Ltd</p>
+              </div>
+
+              <div class="relative pl-6 border-l-4 border-brand-500 py-1">
+                <i data-lucide="quote" class="w-5 h-5 text-brand-500/30 mb-1"></i>
+                <p class="text-base sm:text-lg italic text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
+                  “Our mission is twofold: empower modern organizations across the globe with bulletproof, high-speed digital systems, while simultaneously training Sri Lanka’s next generation of brilliant software thinkers and cyber defenders.”
+                </p>
+              </div>
+
+              <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+                Mohilan is a technology architect, cybersecurity advocate, and educator based in Colombo, Sri Lanka. With hands-on mastery spanning Next.js, Node.js, ethical hacking, and school curriculum design, he spearheads GenZee Tech's software engineering division and educational programs.
+              </p>
+
+              <div class="pt-2">
+                <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">Connect Directly With Mohilan</div>
+                <div class="flex items-center gap-3">
+                  <a href="https://wa.me/94779669761?text=Hello%20Mohilan%2C%20I%20would%20like%20to%20connect%20regarding%20a%20project." target="_blank" class="px-4 py-2 rounded-full bg-emerald-500/10 text-emerald-600 hover:bg-emerald-500/20 text-xs font-bold flex items-center gap-2 transition-all">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Directly
+                  </a>
+                  <a href="mailto:info@genzeetech.com" class="px-4 py-2 rounded-full bg-blue-500/10 text-blue-600 hover:bg-blue-500/20 text-xs font-bold flex items-center gap-2 transition-all">
+                    <i data-lucide="mail" class="w-4 h-4"></i> info@genzeetech.com
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 12. TESTIMONIALS WITH INTERACTIVE CAROUSEL ================= -->
+    <section class="px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-900/40 py-16">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+          <div>
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-cyan text-xs font-semibold uppercase tracking-wider mb-2">
+              Google-Verified Reviews
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+              What Clients & Parents Say
+            </h2>
+          </div>
+
+          <!-- Carousel Controls -->
+          <div class="flex items-center gap-3">
+            <button type="button" onclick="moveTestimonial(-1)" aria-label="Previous review" class="p-3 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 shadow-sm text-slate-700 dark:text-slate-200 transition-colors">
+              <i data-lucide="chevron-left" class="w-5 h-5"></i>
+            </button>
+            <button type="button" onclick="moveTestimonial(1)" aria-label="Next review" class="p-3 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 shadow-sm text-slate-700 dark:text-slate-200 transition-colors">
+              <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Carousel Cards Container -->
+        <div id="testimonial-cards" class="grid grid-cols-1 md:grid-cols-3 gap-6 transition-all duration-500">
+          <!-- Injected via JavaScript -->
+        </div>
+
+        <!-- Indicators -->
+        <div class="flex justify-center items-center gap-2 mt-8" id="testimonial-dots">
+          <!-- Injected via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 13. LATEST BLOG POSTS ================= -->
+    <section class="px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
+          <div>
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-cyan text-xs font-semibold uppercase tracking-wider mb-2">
+              Insights & Engineering
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+              Latest Articles & Tutorials
+            </h2>
+          </div>
+          <a href="blog.html" class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 dark:text-brand-cyan hover:underline">
+            <span>Read all articles →</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Article 1 -->
+          <article class="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+            <div class="h-48 w-full overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" alt="Cyber Security Threats" class="w-full h-full object-cover" />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-500 text-slate-950">Cyber Security</span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <div class="text-xs text-slate-400 mb-2">Feb 12, 2026 · 5 min read</div>
+                <h3 class="text-lg font-bold leading-snug hover:text-brand-500 transition-colors">Top 5 Cyber Security Threats Businesses Face in 2026</h3>
+                <p class="text-xs text-slate-500 mt-2 line-clamp-2">Discover the essential security hygiene steps every business must implement against AI phishing.</p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+                <a href="blog.html#post-1" class="text-xs font-bold text-brand-600 dark:text-brand-cyan hover:underline flex items-center gap-1">Read Article <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+            <div class="h-48 w-full overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="Kids coding" class="w-full h-full object-cover" />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-bold bg-amber-500 text-white">Academy</span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <div class="text-xs text-slate-400 mb-2">Jan 28, 2026 · 4 min read</div>
+                <h3 class="text-lg font-bold leading-snug hover:text-amber-500 transition-colors">Why Kids Should Learn Coding from Grade 1</h3>
+                <p class="text-xs text-slate-500 mt-2 line-clamp-2">How early computational thinking builds logic, creative confidence, and equips students for AI.</p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+                <a href="blog.html#post-2" class="text-xs font-bold text-amber-600 hover:underline flex items-center gap-1">Read Article <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+            <div class="h-48 w-full overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Next.js Web Engineering" class="w-full h-full object-cover" />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-bold bg-brand-500 text-white">Engineering</span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <div class="text-xs text-slate-400 mb-2">Jan 15, 2026 · 6 min read</div>
+                <h3 class="text-lg font-bold leading-snug hover:text-brand-500 transition-colors">Why Next.js & React Dominate Modern Web Apps</h3>
+                <p class="text-xs text-slate-500 mt-2 line-clamp-2">How Server Components and edge caching give businesses an unbeatable advantage in speed.</p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+                <a href="blog.html#post-3" class="text-xs font-bold text-brand-600 dark:text-brand-cyan hover:underline flex items-center gap-1">Read Article <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 13B. INTERACTIVE FAQ ACCORDION ================= -->
+    <section id="faq-section" class="px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-900/40 py-16">
+      <div class="max-w-4xl mx-auto space-y-8">
+        <div class="text-center space-y-3">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-cyan text-xs font-semibold uppercase tracking-wider">
+            <i data-lucide="help-circle" class="w-3.5 h-3.5"></i>
+            <span>Got Questions?</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-slate-500 text-sm">Clear answers regarding our development timelines, cybersecurity audits, and Academy classes.</p>
+        </div>
+
+        <div class="space-y-3" id="faq-accordion-list">
+          <!-- FAQ Item 1 -->
+          <div class="faq-item rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm transition-all">
+            <button type="button" onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left font-bold text-sm sm:text-base text-slate-900 dark:text-white hover:text-brand-500 transition-colors">
+              <span>Where is GenZee Tech located and do you work with overseas clients?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200"></i>
+            </button>
+            <div class="faq-content hidden px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-100 dark:border-slate-800">
+              We are proudly headquartered in Colombo, Sri Lanka, and collaborate seamlessly with clients across the UK, Australia, UAE, Singapore, US, and beyond via Zoom, Slack, and agile delivery tools.
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm transition-all">
+            <button type="button" onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left font-bold text-sm sm:text-base text-slate-900 dark:text-white hover:text-brand-500 transition-colors">
+              <span>What services does GenZee Tech offer?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200"></i>
+            </button>
+            <div class="faq-content hidden px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-100 dark:border-slate-800">
+              We provide Website Development (WordPress/React), Full-Stack SaaS Platforms (Next.js/Node.js), Mobile Apps (React Native), Branding & UI/UX Graphic Design, Cyber Security Solutions (audits & pen testing), and GenZee Tech Academy for school students.
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm transition-all">
+            <button type="button" onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left font-bold text-sm sm:text-base text-slate-900 dark:text-white hover:text-brand-500 transition-colors">
+              <span>How does the Cyber Security consultation work?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200"></i>
+            </button>
+            <div class="faq-content hidden px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-100 dark:border-slate-800">
+              We begin with an initial scope assessment of your web systems or servers. We run non-destructive vulnerability scans, identify security loopholes, and present an executive summary alongside technical remediation steps.
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-item rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm transition-all">
+            <button type="button" onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left font-bold text-sm sm:text-base text-slate-900 dark:text-white hover:text-brand-500 transition-colors">
+              <span>What age groups does GenZee Tech Academy accommodate?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200"></i>
+            </button>
+            <div class="faq-content hidden px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-100 dark:border-slate-800">
+              Our Academy welcomes school students from Grade 1 through Grade 11. We offer tailored streams: Junior Explorers (Grade 1-5), Digital Creators (Grade 6-8), and Future Innovators (Grade 9-11 / O/L ICT).
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="faq-item rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm transition-all">
+            <button type="button" onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left font-bold text-sm sm:text-base text-slate-900 dark:text-white hover:text-brand-500 transition-colors">
+              <span>How long does a typical website or full-stack project take?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200"></i>
+            </button>
+            <div class="faq-content hidden px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-100 dark:border-slate-800">
+              A standard responsive business website typically takes 2 to 4 weeks, while complex full-stack web applications and mobile apps usually range from 6 to 12 weeks depending on feature scope.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 13C. INLINE CONTACT & QUOTATION FORM ================= -->
+    <section id="contact-section" class="px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <!-- Left Info Box -->
+          <div class="lg:col-span-5 bg-gradient-to-br from-brand-900 to-slate-950 text-white p-8 sm:p-10 rounded-3xl border border-blue-800/40 space-y-6 shadow-xl">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-brand-cyan text-xs font-semibold uppercase">
+              <i data-lucide="message-square" class="w-3.5 h-3.5"></i> Let's Talk!
+            </div>
+            <h3 class="text-3xl font-extrabold leading-tight">Start Your Project or Inquire Now</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Have a project idea, security concern, or student enrollment question? Reach out directly and our team will get back to you within 2 to 4 business hours.
+            </p>
+
+            <div class="space-y-4 pt-2 text-sm text-slate-300">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-brand-cyan">
+                  <i data-lucide="map-pin" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400 uppercase font-bold">Office Location</div>
+                  <div>Colombo, Sri Lanka</div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-brand-cyan">
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400 uppercase font-bold">Official Email</div>
+                  <a href="mailto:info@genzeetech.com" class="hover:underline text-white">info@genzeetech.com</a>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-emerald-400">
+                  <i data-lucide="message-circle" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400 uppercase font-bold">WhatsApp Direct</div>
+                  <a href="https://wa.me/94779669761?text=Hi%20GenZee%20Tech%2C%20I%20have%20an%20inquiry." target="_blank" class="hover:underline text-emerald-300 font-bold">+94 779669761</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/10">
+              <a href="https://wa.me/94779669761?text=Hi%20GenZee%20Tech%2C%20I%20have%20an%20inquiry." target="_blank" class="w-full py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold flex items-center justify-center gap-2 shadow-lg transition-all">
+                <i data-lucide="message-circle" class="w-5 h-5 fill-white"></i> Chat on WhatsApp Now
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Interactive Form -->
+          <div class="lg:col-span-7 bg-white dark:bg-slate-900 p-8 sm:p-10 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl">
+            <!-- Form Success Message (Initially Hidden) -->
+            <div id="contact-success" class="hidden text-center py-12 space-y-4">
+              <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-500 mx-auto flex items-center justify-center">
+                <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+              </div>
+              <h3 class="text-2xl font-extrabold text-slate-900 dark:text-white">Message Sent Successfully!</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 max-w-md mx-auto">
+                Thank you for contacting GenZee Tech! We have received your inquiry and our team will get back to you shortly. A direct WhatsApp chat has also been opened for your convenience.
+              </p>
+              <button type="button" onclick="resetContactForm()" class="px-6 py-2.5 rounded-full text-xs font-bold bg-brand-500 text-white hover:bg-brand-600 transition-colors">
+                Send Another Message
+              </button>
+            </div>
+
+            <form id="homepage-contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Your Name *</label>
+                  <input type="text" id="contact-name" required placeholder="John Doe" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm focus:ring-2 focus:ring-brand-500 outline-none" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Email Address *</label>
+                  <input type="email" id="contact-email" required placeholder="john@example.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm focus:ring-2 focus:ring-brand-500 outline-none" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">WhatsApp / Phone *</label>
+                  <input type="tel" id="contact-phone" required placeholder="+94 77 123 4567" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm focus:ring-2 focus:ring-brand-500 outline-none" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Service Required *</label>
+                  <select id="contact-service" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                    <option>Website Development (WordPress / React)</option>
+                    <option>Full-Stack SaaS (Next.js / Node.js)</option>
+                    <option>Mobile App (iOS & Android)</option>
+                    <option>Branding & UI/UX Graphic Design</option>
+                    <option>Cyber Security Audit / Penetration Testing</option>
+                    <option>GenZee Tech Academy (Grade 1-11)</option>
+                    <option>General Quotation / Consultation</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">Project Details / Message *</label>
+                <textarea id="contact-message" rows="4" required placeholder="Describe your project, timeline, features, or question..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm focus:ring-2 focus:ring-brand-500 outline-none"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-4 rounded-xl font-bold text-white bg-gradient-to-r from-brand-600 via-brand-500 to-brand-cyan hover:opacity-95 shadow-lg transition-all flex items-center justify-center gap-2">
+                <i data-lucide="send" class="w-4 h-4"></i> Submit Inquiry & Connect on WhatsApp
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 14. FINAL CTA BANNER ================= -->
+    <section class="px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="relative rounded-3xl bg-gradient-to-r from-brand-900 via-brand-600 to-brand-cyan p-8 sm:p-14 lg:p-16 text-white text-center shadow-2xl overflow-hidden">
+          <div class="relative z-10 max-w-3xl mx-auto space-y-6">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+              Ready to Build Something Great?
+            </h2>
+            <p class="text-base sm:text-lg text-blue-100 max-w-2xl mx-auto leading-relaxed">
+              Whether you have an ambitious product idea, need critical cyber security hardening, or want to enroll your child in GenZee Tech Academy, our team is ready.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+              <a href="#contact-section" class="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-bold text-slate-950 bg-white hover:bg-slate-100 shadow-xl hover:scale-105 active:scale-95 transition-all">
+                <span>Work With Us</span> <i data-lucide="arrow-right" class="w-5 h-5 text-brand-600"></i>
+              </a>
+              <a href="portfolio.html" class="inline-flex items-center gap-2 px-6 py-4 rounded-full text-base font-semibold text-white/90 hover:text-white hover:underline transition-all">
+                <span>Explore our work</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-slate-900 text-slate-300 pt-16 pb-12 border-t border-slate-800 mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+        <!-- Column 1: Brand Info -->
+        <div class="lg:col-span-2 space-y-5">
+          <a href="index.html" class="inline-block focus:outline-none">
+            <div class="relative h-12 w-52 flex items-center justify-center bg-white rounded-xl px-2.5 py-1 shadow-sm border border-slate-200/40">
+              <img src="Logo.png" alt="GenZee Tech Logo" class="max-h-full max-w-full object-contain" />
+            </div>
+          </a>
+          <p class="text-slate-400 text-sm max-w-sm leading-relaxed">
+            Colombo-based technology innovator delivering bespoke web development, full-stack systems, mobile apps, branding & UI/UX design, comprehensive cyber security solutions, and GenZee Tech Academy for school students.
+          </p>
+          <div class="space-y-2 text-sm text-slate-300">
+            <div class="flex items-center gap-2.5"><i data-lucide="map-pin" class="w-4 h-4 text-brand-cyan"></i> Colombo, Sri Lanka</div>
+            <div class="flex items-center gap-2.5"><i data-lucide="mail" class="w-4 h-4 text-brand-cyan"></i> <a href="mailto:info@genzeetech.com" class="hover:text-white">info@genzeetech.com</a></div>
+            <div class="flex items-center gap-2.5"><i data-lucide="phone" class="w-4 h-4 text-brand-cyan"></i> <a href="https://wa.me/94779669761" class="hover:text-white">+94 779669761 (WhatsApp)</a></div>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="space-y-4">
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Company</h3>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="about.html" class="hover:text-white transition-colors">About Us & Story</a></li>
+            <li><a href="portfolio.html" class="hover:text-white transition-colors">Client Portfolio</a></li>
+            <li><a href="careers.html" class="hover:text-white transition-colors">Careers & Jobs</a></li>
+            <li><a href="blog.html" class="hover:text-white transition-colors">Blog & Insights</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Services -->
+        <div class="space-y-4">
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Services</h3>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="services.html#web-dev" class="hover:text-white transition-colors">Website Development</a></li>
+            <li><a href="services.html#full-stack" class="hover:text-white transition-colors">Full-Stack Development</a></li>
+            <li><a href="services.html#mobile-apps" class="hover:text-white transition-colors">Mobile Applications</a></li>
+            <li><a href="services.html#branding" class="hover:text-white transition-colors">Branding & UI/UX</a></li>
+            <li><a href="cyber-security.html" class="flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-medium"><i data-lucide="shield-check" class="w-4 h-4"></i> Cyber Security</a></li>
+            <li><a href="services.html" class="text-xs text-brand-cyan hover:underline">All 6 Services Overview →</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Academy & Legal -->
+        <div class="space-y-6">
+          <div class="space-y-4">
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-amber-400">Academy (Gr. 1-11)</h3>
+            <ul class="space-y-2.5 text-sm">
+              <li><a href="academy.html" class="hover:text-amber-300 transition-colors">Academy Overview</a></li>
+              <li><a href="academy-courses.html" class="hover:text-amber-300 transition-colors">Courses by Grade</a></li>
+              <li><a href="academy-enroll.html" class="inline-flex items-center gap-1 text-amber-400 hover:text-amber-300 font-semibold">Parent Enrollment Form →</a></li>
+            </ul>
+          </div>
+          <div class="space-y-3">
+            <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400">Legal & Info</h3>
+            <ul class="space-y-2 text-xs text-slate-400">
+              <li><a href="faq.html" class="hover:text-slate-200">FAQ</a></li>
+              <li><a href="privacy-policy.html" class="hover:text-slate-200">Privacy Policy</a></li>
+              <li><a href="terms.html" class="hover:text-slate-200">Terms & Conditions</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <p>© 2026 GenZee Tech (Pvt) Ltd. All rights reserved.</p>
+        <p class="flex items-center gap-1">
+          Engineered with <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-500 fill-rose-500"></i> in Colombo, Sri Lanka
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
+  <aside aria-label="Quick contact" class="fixed bottom-6 right-6 z-50 flex items-center group">
+    <div class="hidden sm:block mr-3 px-3 py-1.5 rounded-full bg-slate-900 text-white dark:bg-white dark:text-slate-900 text-xs font-medium shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
+      Chat with us on WhatsApp
+    </div>
+    <a href="https://wa.me/94779669761?text=Hi%20GenZee%20Tech%2C%20I%27m%20interested%20in%20starting%20a%20new%20project." target="_blank" rel="noopener noreferrer" aria-label="Chat with GenZee Tech on WhatsApp" class="relative flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-xl hover:shadow-2xl hover:scale-110 active:scale-95 transition-all">
+      <span class="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-30"></span>
+      <i data-lucide="message-circle" class="w-7 h-7 relative z-10 fill-white"></i>
+    </a>
+  </aside>
+
+  <!-- ================= INTERACTIVE JAVASCRIPT ================= -->
+  <script>
+    // 1. Initialize Lucide icons
+    lucide.createIcons();
+
+    // 2. Dark Mode Toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle');
+
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.theme = isDark ? 'dark' : 'light';
+      lucide.createIcons();
+    }
+
+    if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
+    if (mobileThemeToggleBtn) mobileThemeToggleBtn.addEventListener('click', toggleTheme);
+
+    // 3. Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // 4. Rotating Word in Hero
+    const words = ["Experiences", "Products", "Platforms", "Solutions"];
+    let wordIdx = 0;
+    const rotatingElem = document.getElementById('rotating-word');
+    if (rotatingElem) {
+      setInterval(() => {
+        wordIdx = (wordIdx + 1) % words.length;
+        rotatingElem.style.opacity = '0';
+        rotatingElem.style.transform = 'translateY(10px)';
+        setTimeout(() => {
+          rotatingElem.textContent = words[wordIdx];
+          rotatingElem.style.opacity = '1';
+          rotatingElem.style.transform = 'translateY(0px)';
+        }, 200);
+      }, 2800);
+    }
+
+    // 5. Animated Count-Up Numbers on Scroll
+    const statBoxes = document.querySelectorAll('.stat-box');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = parseInt(entry.target.getAttribute('data-target'), 10);
+          const numSpan = entry.target.querySelector('.stat-number');
+          let current = 0;
+          const duration = 1800;
+          const step = Math.max(1, Math.floor(target / (duration / 25)));
+          const timer = setInterval(() => {
+            current += step;
+            if (current >= target) {
+              numSpan.textContent = target;
+              clearInterval(timer);
+            } else {
+              numSpan.textContent = current;
+            }
+          }, 25);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    statBoxes.forEach(box => observer.observe(box));
+
+    // 6. Portfolio Category Filter
+    function filterPortfolio(category) {
+      const tabs = document.querySelectorAll('.portfolio-tab');
+      const items = document.querySelectorAll('.portfolio-item');
+
+      tabs.forEach(tab => {
+        if (tab.getAttribute('data-cat') === category) {
+          tab.classList.remove('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+          tab.classList.add('bg-brand-500', 'text-white', 'shadow-sm');
+        } else {
+          tab.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+          tab.classList.remove('bg-brand-500', 'text-white', 'shadow-sm');
+        }
+      });
+
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // 7. Testimonials Carousel
+    const allTestimonials = [
+      {
+        id: "1",
+        name: "Dilan Senanayake",
+        role: "Managing Director",
+        company: "Ceylon Horizon Travels",
+        rating: 5,
+        timeAgo: "2 months ago",
+        content: "GenZee Tech overhauled our tour booking system with Next.js. Our conversion rate climbed 42% within 60 days. Mohilan and his team are exceptionally prompt and professional.",
+        avatarBg: "bg-blue-600",
+        initial: "D"
+      },
+      {
+        id: "2",
+        name: "Marcus Vance",
+        role: "CTO",
+        company: "Nexus FinTech UK",
+        rating: 5,
+        timeAgo: "3 months ago",
+        content: "Their cyber security assessment pinpointed critical API misconfigurations before our production launch. The remediation report was crystal clear and actionable. Highly recommended.",
+        avatarBg: "bg-emerald-600",
+        initial: "M"
+      },
+      {
+        id: "3",
+        name: "Anoma Wickramasinghe",
+        role: "Parent of Grade 7 Student",
+        company: "GenZee Tech Academy",
+        rating: 5,
+        timeAgo: "1 month ago",
+        content: "My son joined the Grade 6-8 Digital Creators course and was creating his own Python games within weeks! The instructors are patient, knowledgeable, and make computing so exciting for kids.",
+        avatarBg: "bg-amber-600",
+        initial: "A"
+      },
+      {
+        id: "4",
+        name: "Sarah Al-Nuaimi",
+        role: "Creative Director",
+        company: "Oasis Studios Dubai",
+        rating: 5,
+        timeAgo: "4 months ago",
+        content: "The branding and UI design GenZee Tech produced for our mobile release was world-class. From Figma components to color tokens, everything was developer-ready and impeccably styled.",
+        avatarBg: "bg-purple-600",
+        initial: "S"
+      },
+      {
+        id: "5",
+        name: "Kavinda Perera",
+        role: "Founder",
+        company: "QuickKart Colombo",
+        rating: 5,
+        timeAgo: "5 months ago",
+        content: "They engineered our React Native grocery delivery app with offline syncing and driver tracking. Seamless performance on both budget Android devices and flagship iPhones.",
+        avatarBg: "bg-rose-600",
+        initial: "K"
+      }
+    ];
+
+    let testimonialIndex = 0;
+
+    function renderTestimonials() {
+      const container = document.getElementById('testimonial-cards');
+      const dotsContainer = document.getElementById('testimonial-dots');
+      if (!container) return;
+
+      container.innerHTML = '';
+      
+      // Determine count per screen (3 for desktop, 1 for mobile)
+      const count = window.innerWidth >= 768 ? 3 : 1;
+      
+      for (let i = 0; i < count; i++) {
+        const item = allTestimonials[(testimonialIndex + i) % allTestimonials.length];
+        const card = document.createElement('div');
+        card.className = "rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-7 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between";
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-11 h-11 rounded-full ${item.avatarBg} text-white font-bold flex items-center justify-center">${item.initial}</div>
+              <div>
+                <div class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+                  <span>${item.name}</span>
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-blue-500 fill-blue-500 text-white"></i>
+                </div>
+                <div class="text-xs text-slate-500">${item.role} · ${item.company}</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 mb-4">
+              <div class="flex text-amber-400">
+                ${'<i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>'.repeat(item.rating)}
+              </div>
+              <span class="text-xs text-slate-400">${item.timeAgo}</span>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed italic">
+              “${item.content}”
+            </p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-400 flex items-center gap-1 font-medium">
+            <span class="text-blue-500 font-bold">G</span> <span>Verified Google Review</span>
+          </div>
+        `;
+        container.appendChild(card);
+      }
+
+      if (dotsContainer) {
+        dotsContainer.innerHTML = '';
+        allTestimonials.forEach((_, idx) => {
+          const dot = document.createElement('button');
+          dot.type = "button";
+          dot.ariaLabel = `Go to review slide ${idx + 1}`;
+          dot.className = `w-2.5 h-2.5 rounded-full transition-all ${idx === testimonialIndex ? 'bg-brand-500 w-6' : 'bg-slate-300 dark:bg-slate-700'}`;
+          dot.onclick = () => {
+            testimonialIndex = idx;
+            renderTestimonials();
+          };
+          dotsContainer.appendChild(dot);
+        });
+      }
+
+      lucide.createIcons();
+    }
+
+    function moveTestimonial(direction) {
+      testimonialIndex = (testimonialIndex + direction + allTestimonials.length) % allTestimonials.length;
+      renderTestimonials();
+    }
+
+    renderTestimonials();
+    window.addEventListener('resize', renderTestimonials);
+    // Auto-rotate every 6 seconds
+    setInterval(() => moveTestimonial(1), 6000);
+
+    // 8. FAQ Accordion Toggle
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const content = item.querySelector('.faq-content');
+      const icon = item.querySelector('.faq-icon');
+
+      const isHidden = content.classList.contains('hidden');
+
+      // Close all others
+      document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+      document.querySelectorAll('.faq-icon').forEach(ic => ic.classList.remove('rotate-180', 'text-brand-500'));
+
+      if (isHidden) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-180', 'text-brand-500');
+      }
+    }
+
+    // 9. Contact Form Submission with Confetti & WhatsApp Launch
+    function handleContactSubmit(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('contact-name').value.trim();
+      const email = document.getElementById('contact-email').value.trim();
+      const phone = document.getElementById('contact-phone').value.trim();
+      const service = document.getElementById('contact-service').value;
+      const message = document.getElementById('contact-message').value.trim();
+
+      if (!name || !email || !message) return;
+
+      // Celebrate with confetti
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
+      }
+
+      // Format WhatsApp message
+      const waText = encodeURIComponent(
+        `*New Inquiry from GenZee Tech Website*\n\n` +
+        `👤 *Name:* ${name}\n` +
+        `✉️ *Email:* ${email}\n` +
+        `📞 *Phone:* ${phone}\n` +
+        `🛠️ *Service:* ${service}\n\n` +
+        `💬 *Message:*\n${message}`
+      );
+
+      // Open WhatsApp chat in a new tab
+      window.open(`https://wa.me/94779669761?text=${waText}`, '_blank');
+
+      // Show success message in-page
+      document.getElementById('homepage-contact-form').classList.add('hidden');
+      document.getElementById('contact-success').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function resetContactForm() {
+      document.getElementById('homepage-contact-form').reset();
+      document.getElementById('homepage-contact-form').classList.remove('hidden');
+      document.getElementById('contact-success').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>

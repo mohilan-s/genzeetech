@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GenZee Tech Academy | Grade 1 to 11 IT Skill Development</title>
+  <meta name="description" content="IT skill development, block coding, Python, and school ICT exam coaching for students Grade 1 to 11 in Colombo, Sri Lanka." />
+  <link rel="icon" type="image/png" href="Logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff8ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa',
+              500: '#0062ff', 600: '#0052db', 700: '#0042b5', 800: '#003392', 900: '#012068',
+              cyan: '#00b4fd', navy: '#010a29',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            display: ['Outfit', 'sans-serif']
+          },
+          borderRadius: { '20': '20px', '24': '24px' }
+        }
+      }
+    };
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 antialiased font-sans selection:bg-brand-500 selection:text-white transition-colors duration-200">
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 right-0 z-50 py-4 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200/60 dark:border-slate-800/60 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="h-11 w-48 sm:h-12 sm:w-52 flex items-center bg-white rounded-xl px-2.5 py-1 shadow-sm border border-slate-200/60">
+          <img src="Logo.png" alt="GenZee Tech Logo" class="w-full h-full object-contain" />
+        </div>
+      </a>
+      <nav class="hidden lg:flex items-center gap-4 text-sm font-medium">
+        <a href="index.html" class="text-slate-700 dark:text-slate-200 hover:text-brand-500">Home</a>
+        <a href="about.html" class="text-slate-700 dark:text-slate-200 hover:text-brand-500">About Us</a>
+        <a href="services.html" class="text-slate-700 dark:text-slate-200 hover:text-brand-500">Services</a>
+        <a href="cyber-security.html" class="text-emerald-600 dark:text-emerald-400">Cyber Security</a>
+        <a href="academy.html" class="text-amber-600 dark:text-amber-400 font-bold">Academy</a>
+        <a href="academy-courses.html" class="text-slate-700 dark:text-slate-200 hover:text-brand-500">Courses</a>
+        <a href="contact.html" class="text-slate-700 dark:text-slate-200 hover:text-brand-500">Contact</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="academy-enroll.html" class="px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-amber-500 hover:bg-amber-600 shadow-md">
+          Enroll Student
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="pt-28 space-y-20">
+    <!-- Hero -->
+    <section class="px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto rounded-24 bg-gradient-to-br from-amber-500 via-orange-500 to-amber-600 p-8 sm:p-14 text-white relative overflow-hidden shadow-2xl">
+        <div class="max-w-3xl space-y-5">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+            <span>GenZee Tech Academy · Grade 1 to 11</span>
+          </div>
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+            Building the Next Generation of Tech-Smart Students.
+          </h1>
+          <p class="text-base sm:text-lg text-amber-50 leading-relaxed">
+            Basic IT skills, coding confidence, creative graphic design, and school ICT syllabus preparation taught by passionate software engineers.
+          </p>
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a href="academy-enroll.html" class="px-7 py-3.5 rounded-full text-sm font-bold bg-white text-slate-950 hover:bg-amber-50 shadow-lg transition-transform hover:scale-105">
+              Enroll Your Child
+            </a>
+            <a href="academy-courses.html" class="px-7 py-3.5 rounded-full text-sm font-bold bg-white/20 hover:bg-white/30 text-white border border-white/30 transition-colors">
+              View Syllabus by Grade
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 Grade Groups -->
+    <section class="px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto space-y-12">
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">Programs by Level</h2>
+          <p class="mt-2 text-sm text-slate-500">Curriculum structured specifically for age-appropriate cognitive stages.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="rounded-24 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400">Grade 1 - 5</span>
+            <h3 class="text-2xl font-bold mt-3 mb-1">Junior Explorers</h3>
+            <div class="text-xs text-amber-500 font-semibold mb-4">Ages 6 - 10</div>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Playful introduction to computing, touch typing, online safety, and MIT Scratch Jr visual coding.</p>
+            <a href="academy-enroll.html" class="block text-center py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 font-bold text-xs hover:bg-amber-500 hover:text-white transition-colors">Enroll for Grade 1-5 →</a>
+          </div>
+
+          <div class="rounded-24 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-50 dark:bg-amber-950 text-amber-600 dark:text-amber-400">Grade 6 - 8</span>
+            <h3 class="text-2xl font-bold mt-3 mb-1">Digital Creators</h3>
+            <div class="text-xs text-amber-500 font-semibold mb-4">Ages 11 - 13</div>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">MS Office spreadsheets, Canva design composition, Python programming fundamentals, and web basics.</p>
+            <a href="academy-enroll.html" class="block text-center py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 font-bold text-xs hover:bg-amber-500 hover:text-white transition-colors">Enroll for Grade 6-8 →</a>
+          </div>
+
+          <div class="rounded-24 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-50 dark:bg-purple-950 text-purple-600 dark:text-purple-400">Grade 9 - 11</span>
+            <h3 class="text-2xl font-bold mt-3 mb-1">Future Innovators</h3>
+            <div class="text-xs text-amber-500 font-semibold mb-4">Ages 14 - 17</div>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Advanced Python & JS, Sri Lanka O/L ICT exam practical coaching, SQL databases, and cybersecurity essentials.</p>
+            <a href="academy-enroll.html" class="block text-center py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 font-bold text-xs hover:bg-amber-500 hover:text-white transition-colors">Enroll for Grade 9-11 →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Academy -->
+    <section class="px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-900/40 py-16">
+      <div class="max-w-7xl mx-auto space-y-10">
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">Why Parents Choose Us</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="p-6 rounded-24 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <i data-lucide="users" class="w-6 h-6 text-amber-500 mb-3"></i>
+            <h3 class="font-bold text-base mb-1">Small Batches (8-12 Students)</h3>
+            <p class="text-xs text-slate-500">Every child receives individual guidance from practicing software engineers.</p>
+          </div>
+          <div class="p-6 rounded-24 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <i data-lucide="shield-check" class="w-6 h-6 text-amber-500 mb-3"></i>
+            <h3 class="font-bold text-base mb-1">Child-Safe Online Environment</h3>
+            <p class="text-xs text-slate-500">Strict student privacy rules. Zero personal data or student photos posted publicly.</p>
+          </div>
+          <div class="p-6 rounded-24 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <i data-lucide="award" class="w-6 h-6 text-amber-500 mb-3"></i>
+            <h3 class="font-bold text-base mb-1">Recognized Certificates</h3>
+            <p class="text-xs text-slate-500">Students build capstone portfolios and earn certificates recognized by educators.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="bg-slate-900 text-slate-400 py-8 text-center text-xs border-t border-slate-800 mt-20">
+    <p>© 2026 GenZee Tech Academy | <a href="index.html" class="text-amber-400 hover:underline">Back to Homepage</a></p>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

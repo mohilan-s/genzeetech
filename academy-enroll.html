@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academy Enrollment Form | GenZee Tech Academy</title>
+  <meta name="description" content="Parent and guardian enrollment application for GenZee Tech Academy Grade 1-11 students." />
+  <link rel="icon" type="image/png" href="Logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans p-4 sm:p-8">
+  <div class="max-w-3xl mx-auto space-y-6">
+    <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+      <a href="index.html" class="flex items-center gap-2 text-xs font-bold text-amber-600 hover:underline">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Homepage
+      </a>
+      <div class="h-10 w-44 bg-white rounded-xl p-1 shadow-sm border border-slate-200">
+        <img src="Logo.png" alt="GenZee Tech Logo" class="w-full h-full object-contain" />
+      </div>
+    </div>
+
+    <div class="text-center space-y-2">
+      <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-600 uppercase tracking-wider">Admission Form</span>
+      <h1 class="text-3xl font-extrabold text-slate-900">GenZee Tech Academy Enrollment</h1>
+      <p class="text-sm text-slate-500">Please fill out this form to register your child. All details are kept strictly private.</p>
+    </div>
+
+    <!-- Notice -->
+    <div class="p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-xs flex items-start gap-3">
+      <i data-lucide="shield-check" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i>
+      <div>
+        <strong>Parent/Guardian Notice:</strong> This application must be completed by a parent or legal guardian. We collect only the minimum information required for enrollment. No student photos or personal identifying data are ever displayed publicly.
+      </div>
+    </div>
+
+    <!-- Form -->
+    <form id="enrollForm" class="bg-white rounded-24 border border-slate-200 p-6 sm:p-10 shadow-sm space-y-6">
+      <div class="space-y-4">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 border-b pb-2">1. Parent / Guardian Information</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div>
+            <label class="block text-xs font-semibold mb-1">Parent Full Name *</label>
+            <input id="pName" type="text" required placeholder="e.g. Priyantha Silva" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-amber-500" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold mb-1">Phone / WhatsApp *</label>
+            <input id="pPhone" type="tel" required placeholder="+94 77 123 4567" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-amber-500" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold mb-1">Email Address *</label>
+            <input id="pEmail" type="email" required placeholder="parent@example.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-amber-500" />
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 border-b pb-2">2. Student & Batch Details</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div>
+            <label class="block text-xs font-semibold mb-1">Student First Name *</label>
+            <input id="sName" type="text" required placeholder="e.g. Kaveen" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-amber-500" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold mb-1">Current Grade *</label>
+            <select id="sGrade" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-amber-500">
+              <option>Grade 1</option><option>Grade 2</option><option>Grade 3</option><option>Grade 4</option><option>Grade 5</option>
+              <option selected>Grade 6</option><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option><option>Grade 10</option><option>Grade 11 (O/L ICT)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold mb-1">Preferred Schedule *</label>
+            <select id="sBatch" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-amber-500">
+              <option>Weekend Morning (Saturday 9-11 AM)</option>
+              <option>Weekend Afternoon (Sunday 2-4 PM)</option>
+              <option>Weekday After-School (Wed 4:30-6:30 PM)</option>
+              <option>Online Zoom Batch (Flexible Timings)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold mb-1">Any prior coding experience or special notes? (Optional)</label>
+        <textarea id="sNotes" rows="2" placeholder="e.g. Has used Scratch at school, interested in robotics..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm"></textarea>
+      </div>
+
+      <div class="flex items-start gap-3">
+        <input type="checkbox" id="consent" required class="mt-1 w-4 h-4 rounded text-amber-500 focus:ring-amber-500" />
+        <label for="consent" class="text-xs text-slate-600 leading-relaxed">
+          I am the parent/legal guardian of this student. I consent to GenZee Tech Academy contacting me regarding enrollment, schedules, and batch details.
+        </label>
+      </div>
+
+      <button type="submit" class="w-full py-4 rounded-xl font-bold text-white bg-amber-500 hover:bg-amber-600 shadow-md transition-all flex items-center justify-center gap-2">
+        <i data-lucide="sparkles" class="w-5 h-5"></i> Submit Student Enrollment Application
+      </button>
+    </form>
+
+    <div id="successMsg" class="hidden p-8 rounded-24 bg-white border border-emerald-300 text-center space-y-3">
+      <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center">
+        <i data-lucide="check-circle-2" class="w-7 h-7"></i>
+      </div>
+      <h3 class="text-xl font-bold text-slate-900">Application Submitted!</h3>
+      <p class="text-sm text-slate-500">Thank you! Our Academy coordinator will contact you via WhatsApp or phone shortly with batch placement details.</p>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+    document.getElementById('enrollForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const pName = document.getElementById('pName').value;
+      const sName = document.getElementById('sName').value;
+      const sGrade = document.getElementById('sGrade').value;
+      const sBatch = document.getElementById('sBatch').value;
+      
+      const msg = encodeURIComponent(`Hi GenZee Tech Academy! I would like to enroll my child.\n\nParent: ${pName}\nStudent: ${sName}\nGrade: ${sGrade}\nBatch: ${sBatch}`);
+      window.open(`https://wa.me/94779669761?text=${msg}`, '_blank');
+      
+      document.getElementById('enrollForm').classList.add('hidden');
+      document.getElementById('successMsg').classList.remove('hidden');
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
